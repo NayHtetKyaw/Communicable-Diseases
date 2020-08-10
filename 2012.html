@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<htmL>
+
+<head>
+    <title>CDMI | Home</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="CDIM.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0 "></script>
+    <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css ">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="index.html" style="text-decoration: none;">
+            <li>Home</li>
+        </a>
+
+        <a href="Learn.html" style="text-decoration: none;">
+            <li>Learn</li>
+        </a>
+        <a href="about.html" style="text-decoration: none;">
+            <li>About</li>
+        </a>
+    </div>
+    <section>
+        <div class="home">
+            <div class="option">
+                <div class="select-box">
+
+                    <div class="option-container">
+                        <a href="2020.html">
+                            <div class=" options ">
+                                <input type="radio " class="radio " id="2020 " name="category ">
+                                <label for="2020 ">2020</label>
+                            </div>
+                        </a>
+                        <a href="2019.html ">
+                            <div class="options ">
+
+                                <input type="radio " class="radio " id="2019 " name="category ">
+                                <label for="2019 ">2019</label>
+
+                            </div>
+                        </a>
+                        <a href="2018.html ">
+                            <div class="options ">
+
+                                <input type="radio " class="radio " id="2018 " name="category ">
+                                <label for="2018 ">2018</label>
+
+                            </div>
+                        </a>
+                        <a href="2017.html ">
+                            <div class="options ">
+
+                                <input type="radio " class="radio " id="2017 " name="category ">
+                                <label for="2017 ">2017</label>
+
+                            </div>
+                        </a>
+                        <a href="2016.html ">
+                            <div class="options ">
+
+                                <input type="radio " class="radio " id="2016 " name="category ">
+                                <label for="2016 ">2016</label>
+
+                            </div>
+                        </a>
+                        <a href="2015.html ">
+                            <div class="options ">
+                                <input type="radio " class="radio " id="2015 " name="category ">
+                                <label for="2015 ">2015</label>
+
+                            </div>
+                        </a>
+                        <a href="2014.html ">
+                            <div class="options ">
+                                <input type="radio " class="radio " id="2014 " name="category ">
+                                <label for="2014 ">2014</label>
+                            </div>
+                        </a>
+                        <a href="2013.html ">
+                            <div class="options ">
+                                <input type="radio " class="radio " id="2013 " name="category ">
+                                <label for="2013 ">2013</label>
+
+                            </div>
+                        </a>
+                        <a href="2012.html " style="text-decoration: none; color: rgb(38, 199, 38); ">
+                            <div class="options ">
+                                <input type="radio " class="radio " id="2012 " name="category ">
+                                <label for="2012 ">2012</label>
+
+                            </div>
+                        </a>
+                        <a href="2011.html ">
+                            <div class="options ">
+                                <input type="radio " class="radio " id="2011 " name="category ">
+                                <label for="2011 ">2011</label>
+                            </div>
+                        </a>
+                        <a href="2010.html ">
+                            <div class="options ">
+                                <input type="radio " class="radio " id="2010 " name="category ">
+                                <label for="2010 ">2010</label>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="selected ">
+                        <header>&nbsp;&nbsp;&nbsp;2012</header>
+                    </div>
+                </div>
+                <div class="option-para ">
+                    <h2>Chart Display Guide</h2>
+                    <p> The chart provide the number of people who are infected from the specified disease or virus</p>
+                    <h5>Axis Descrtiptions :</h5>
+                    <ul>
+                        <li>
+                            Y-Axis : Show the number of people
+                        </li>
+                        <li>
+                            X-Axis : Show the name of the diseases
+                        </li>
+                    </ul>
+                    <a href="index.html " style="text-decoration: none; color: white; "><button class="button-index " style="text-decoration: none; ">Back</button></a>
+                </div>
+
+            </div>
+
+            <div class="chart">
+                <canvas id="myChart" width="50" height="45"></canvas>
+                <script>
+                    Chart.defaults.global.defaultFontColor = 'white'
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myPieChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Covid-19', 'Malria', 'Yellow Fever', 'HIV / AIDS', 'H1N1', 'Flu'],
+                            datasets: [{
+                                label: 'Number of Infected People by the Diseases(2012)',
+                                barPercentage: 0.5,
+                                barThickness: 6,
+                                maxBarThickness: 8,
+                                minBarLength: 2,
+                                data: [0, 6030931, 128200, 235200, 0, 4033221],
+
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+
+                        options: {
+                            layout: {
+                                padding: {
+                                    left: 0,
+                                    right: 0,
+                                    top: 30,
+                                    bottom: 0
+                                }
+
+                            },
+
+                            // scales: {
+                            //     yAxes: [{
+                            //         ticks: {
+                            //             beginAtZero: false,
+                            //         },
+                            //     }]
+                            // }
+                        },
+                    });
+                </script>
+            </div>
+    </section>
+    </div>
+    <script src="index.js ">
+    </script>
+</body>
+<footer>
+    <div class="footer ">2020 &copy;CopyRight NayHtetKyaw.dev</div>
+</footer>
+
+</htmL>

@@ -1,0 +1,425 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import 'nice-select';
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    overflow: hidden;
+}
+
+
+/* nav */
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: solid white;
+    font-family: Orbitron;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    transition: 0.5s;
+}
+
+.nav a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.nav li {
+    color: white;
+    list-style: none;
+    padding: 10px;
+    border: solid transparent;
+}
+
+.nav li:hover {
+    font-size: bold;
+    color: rgb(71, 252, 0);
+}
+
+
+/* Home */
+
+.home {
+    display: flex;
+    width: 100%;
+    height: 765px;
+}
+
+.option {
+    display: flex;
+    background-color: transparent;
+    width: 50%;
+    height: 700px;
+    margin-top: 90px;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.select-box {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    margin-left: 13px;
+}
+
+.select-box .option-container {
+    background-color: #2f3640;
+    color: #f5f6fa;
+    max-height: 0;
+    width: 50%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+}
+
+.selected::after {
+    content: "";
+    background: url(media/arrowd1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 22px;
+    right: 10px;
+    top: 5px;
+    transition: all .04s;
+    margin: 3px;
+}
+
+.selected {
+    width: 50%;
+    background-color: #2f3640;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #f5f6fa;
+    position: relative;
+    order: 0;
+    padding: 5px;
+    /* margin-left: 13px; */
+}
+
+.select-box .option-container.active {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select-box .option-container.active+.selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+
+.select-box .option-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: #0d141f;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.select-box .option-container::-webkit-scrollbar-thumb {
+    background-color: #525861;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.select-box .options,
+selected {
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.select-box .options:hover {
+    background: #414b57;
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .options .radio {
+    display: none;
+}
+
+
+/* .option-two */
+
+.option-para {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 600px;
+    background-color: transparent;
+    color: white;
+    margin: 10px;
+}
+
+.option-para p {
+    text-align: justify;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+
+/* chart */
+
+.chart {
+    width: 50%;
+    height: 650px;
+    margin-top: 90px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+/* main-body */
+
+.main-body {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    flex-shrink: inherit;
+    height: 770px;
+}
+
+
+/* list container */
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    height: 700px;
+    max-height: 690px;
+    float: left;
+    list-style: none;
+    color: white;
+    margin-left: 20px;
+    margin-top: 75px;
+    padding: 20px;
+    border-right: solid white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: 0.8s;
+}
+
+.list-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: #0d141f;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+    background-color: #525861;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.list-container header {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    text-align: center;
+    font-size: large;
+    border-bottom: solid white;
+    color: white;
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    width: 250px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.list-container li {
+    padding: 15px;
+    border: solid white 0.5px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    /* text-decoration: none;
+    list-style: none; */
+}
+
+.list-container li:hover {
+    font: bolder;
+    background: rgb(71, 252, 0);
+    color: black;
+}
+
+
+/* content body */
+
+.content {
+    width: 90%;
+    padding-top: 75px;
+    margin: 20px;
+    overflow: hidden;
+    height: 700px;
+    transition: 0.8s;
+}
+
+.content p {
+    display: flex;
+    padding: 20px;
+    color: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.content h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.content li {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    margin-left: 100px;
+}
+
+.paragraph {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+    text-align: justify;
+    display: flex;
+    flex-direction: colsumn;
+    display: inline-block;
+    overflow: scroll;
+    width: 90%;
+    height: 560px;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-left: 5%;
+    line-height: 35px;
+    color: white;
+    overflow-x: hidden;
+}
+
+.paragraph::-webkit-scrollbar {
+    width: 8px;
+    background-color: #0d141f;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.paragraph::-webkit-scrollbar-thumb {
+    background-color: #525861;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content img {
+    margin-left: 100px;
+    padding: 20px;
+}
+
+
+/* button */
+
+.button {
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 150px;
+    height: 50px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f7f7f7;
+    border-left: solid 6px rgb(71, 252, 0);
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+.button:active {
+    box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+    transform: translateY(2px);
+    /* text-decoration: none; */
+}
+
+.button:hover {
+    font: bolder;
+}
+
+.button-index {
+    width: 600px;
+    height: 50px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f7f7f7;
+    border-left: solid 6px rgb(71, 252, 0);
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+.button-index:active {
+    box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+    transform: translateY(2px);
+    /* text-decoration: none; */
+}
+
+button-index:hover {
+    font: bolder;
+}
+
+
+/* about.html */
+
+.about {
+    display: flex;
+    width: auto;
+    height: 765px;
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+}
+
+.paraCon {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 150px;
+    width: 80%;
+    height: 80%;
+    background-color: transparent;
+    /* border: solid white; */
+    color: white;
+    font-family: Aileron;
+    text-align: justify;
+    line-height: 30px;
+    padding: 20px;
+}
+
+.paraCon h1 {
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* footer */
+
+footer .footer {
+    text-align: center;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 15px;
+}
